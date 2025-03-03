@@ -1,0 +1,69 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: var(--border-width-s) solid transparent;
+  width: 100%;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-range: 0 100px;
+  animation-timeline: scroll();
+  padding-block: fluid(22, 14);
+
+  &__inner {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    outline: var(--border-width-l) solid var(--color-black-12);
+    border-radius: var(--border-radius-l);
+    padding: fluid-to-laptop(10, 8);
+    background-color: var(--color-black-06);
+
+    @include laptop {
+      outline-width: var(--border-width-m);
+      border-radius: var(--border-radius-m);
+    }
+
+    &-list {
+      display: flex;
+      column-gap: 6px;
+      align-items: center;
+    }
+
+    &-link {
+      border-radius: var(--border-radius-s);
+      padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
+      color: var(--color-gray-75);
+
+      @include hover {
+        color: var(--color-white);
+        background-color: var(--color-red-45);
+      }
+
+      &.is-active {
+        font-weight: 500;
+        color: var(--color-white);
+        background-color: var(--color-black-10);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+  }
+
+  @keyframes scrolling-header {
+    to {
+      border-color: var(--color-black-15);
+      background-color: var(--color-black-08);
+      padding-block: 10px;
+    }
+  }
+}
