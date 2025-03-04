@@ -17,27 +17,84 @@
     justify-content: space-between;
   }
 
+  &__overlay-menu-dialog {
+    position: fixed;
+    inset: 0;
+    flex-direction: column-reverse;
+    justify-content: start;
+    border: none;
+    padding: var(--container-padding-x);
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-20);
+    transition-duration: var(--transition-duration);
+    row-gap: 16px;
+    transition-behavior: allow-discrete;
+
+    @include tablet-above {
+      display: contents;
+    }
+
+    @mixin starting-styles {
+      opacity: 0;
+      translate: 50%;
+    }
+
+    &[open] {
+      display: flex;
+
+      @starting-style {
+        @include starting-styles
+      }
+    }
+
+    &:not([open]) {
+      @include starting-styles
+    }
+  }
+
   &__menu {
-    outline: var(--border-width-l) solid var(--color-black-12);
     border-radius: var(--border-radius-l);
-    padding: fluid-to-laptop(10, 8);
-    background-color: var(--color-black-06);
 
     @include laptop {
       outline-width: var(--border-width-m);
       border-radius: var(--border-radius-m);
     }
 
+    @include tablet-above {
+      outline: var(--border-width-l) solid var(--color-black-12);
+      padding: fluid-to-laptop(10, 8);
+      background-color: var(--color-black-06);
+    }
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      overflow-y: auto;
+      border-radius: 0;
+      height: 100%;
+    }
+
     &-list {
       display: flex;
       column-gap: 6px;
       align-items: center;
+
+      @include tablet {
+        flex-direction: column;
+        margin-block: auto;
+        row-gap: 16px;
+      }
     }
 
     &-link {
       border-radius: var(--border-radius-s);
       padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
       color: var(--color-gray-75);
+
+      @include tablet {
+        font-size: 20px;
+      }
 
       @include hover {
         color: var(--color-white);
@@ -57,6 +114,10 @@
     display: flex;
     column-gap: 10px;
     align-items: center;
+  }
+
+  &__burger-button {
+    position: relative;
   }
 
   @keyframes scrolling-header {
