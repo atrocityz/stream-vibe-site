@@ -9,7 +9,7 @@ const Section = (props) => {
     actions,
     isActionsHiddenOnMobile = false,
     children,
-    className
+    className,
   } = props
 
   return (
@@ -21,7 +21,8 @@ const Section = (props) => {
         <div className="section__info">
           <h2
             className="section__title title title--h3"
-            id={titleId}>
+            id={titleId}
+          >
             {title}
           </h2>
           {description && (
@@ -30,17 +31,17 @@ const Section = (props) => {
             </div>
           )}
         </div>
-        <div
-          className={classNames('section__actions', {
-            'hidden-mobile': isActionsHiddenOnMobile
-          })}
-        >
-          {actions}
-        </div>
+        {actions && (
+          <div
+            className={classNames('section__actions', {
+              'hidden-mobile': isActionsHiddenOnMobile,
+            })}
+          >
+            {actions}
+          </div>
+        )}
       </header>
-      <div className="section__body">
-        {children}
-      </div>
+      <div className="section__body">{children}</div>
     </section>
   )
 }

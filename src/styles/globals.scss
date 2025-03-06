@@ -24,7 +24,7 @@ main {
 }
 
 .title--h1 {
-  @include fluid-text(58, 28)
+  @include fluid-text(58, 28);
 }
 
 .title--h2 {
@@ -53,7 +53,13 @@ main {
   font-weight: 600;
 }
 
-a, button, label, input, textarea, select, svg * {
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
   transition-duration: var(--transition-duration);
 }
 
@@ -75,4 +81,10 @@ a {
 
 :has(.swiper) {
   min-width: 0;
+}
+
+.header,
+.content > *:not(:last-child),
+.footer {
+  display: none !important;
 }
