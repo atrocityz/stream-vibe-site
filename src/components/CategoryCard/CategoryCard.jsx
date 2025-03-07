@@ -1,12 +1,9 @@
 import './CategoryCard.scss'
-import { Image } from 'minista'
+import { Image, Picture } from 'minista'
 import Icon from '@/components/Icon'
 
 const CategoryCard = (props) => {
-  const {
-    title,
-    images = []
-  } = props
+  const { title, images = [] } = props
 
   return (
     <a
@@ -15,10 +12,11 @@ const CategoryCard = (props) => {
     >
       <div className="category-card__images">
         {images.map((imgSrc, index) => (
-          <Image
+          <Picture
             className="caregory-card__image"
             src={imgSrc}
             key={index}
+            formats={['webp', 'avif', 'inherit']}
           />
         ))}
       </div>

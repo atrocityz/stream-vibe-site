@@ -7,7 +7,7 @@ const Button = (props) => {
     className,
     type = 'button',
     /*
-     * '' default || 'transparent' || 'black-10'
+     * '' default || 'transparent' || 'black-10' || 'red-45
      */
     mode = '',
     label,
@@ -20,7 +20,7 @@ const Button = (props) => {
      */
     iconPosition = 'before',
     hasFillIcon = false,
-    extraAttrs
+    extraAttrs,
   } = props
 
   const isLink = href !== undefined
@@ -39,22 +39,16 @@ const Button = (props) => {
 
   return (
     <Component
-      className={classNames(
-        className,
-        'button',
-        {
-          [`button--${mode}`]: mode
-        }
-      )}
+      className={classNames(className, 'button', {
+        [`button--${mode}`]: mode,
+      })}
       title={title}
       aria-label={title}
       {...specificProps}
       {...extraAttrs}
     >
       {iconPosition === 'before' && iconComponent}
-      {isLabelVisible && (
-        <span className="button__label">{label}</span>
-      )}
+      {isLabelVisible && <span className="button__label">{label}</span>}
       {iconPosition === 'after' && iconComponent}
     </Component>
   )
