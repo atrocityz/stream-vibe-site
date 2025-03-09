@@ -7,7 +7,7 @@ const Button = (props) => {
     className,
     type = 'button',
     /*
-     * '' default || 'transparent' || 'black-10' || 'red-45
+     * '' default || 'transparent' || 'black-10' || 'black-08'
      */
     mode = '',
     label,
@@ -20,7 +20,7 @@ const Button = (props) => {
      */
     iconPosition = 'before',
     hasFillIcon = false,
-    extraAttrs,
+    extraAttrs
   } = props
 
   const isLink = href !== undefined
@@ -40,7 +40,7 @@ const Button = (props) => {
   return (
     <Component
       className={classNames(className, 'button', {
-        [`button--${mode}`]: mode,
+        [`button--${mode}`]: mode
       })}
       title={title}
       aria-label={title}

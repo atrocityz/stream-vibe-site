@@ -1,0 +1,45 @@
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--border-radius-l);
+  padding: fluid(50, 24);
+  height: 100%;
+  background-color: var(--color-black-10);
+  row-gap: fluid(50, 30);
+
+  @include laptop {
+    border-radius: var(--border-radius-m);
+  }
+
+  &__info {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    row-gap: fluid(16, 10);
+  }
+
+  &__conditions {
+    display: flex;
+    column-gap: 4px;
+    align-items: end;
+    line-height: 0.73;
+
+    @include laptop {
+      column-gap: 2px;
+    }
+  }
+
+  &__price {
+    @include fluid-text(40, 24);
+
+    font-weight: 600;
+    color: var(--color-white);
+  }
+
+  &__actions {
+    display: grid;
+    column-gap: fluid-to-laptop(20, 12);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
