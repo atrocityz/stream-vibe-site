@@ -1,5 +1,5 @@
 {
-  "printWidth": 100,
+  "printWidth": 80,
   "useTabs": false,
   "tabWidth": 2,
   "trailingComma": "all",
@@ -10,6 +10,5 @@
   "jsxSingleQuote": false,
   "bracketSameLine": false,
   "endOfLine": "lf",
-  "experimentalOperatorPosition": "start",
-  "singleAttributePerLine": true
+  "experimentalOperatorPosition": "start"
 }

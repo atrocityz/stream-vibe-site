@@ -5,7 +5,7 @@ const getTabsElementsIdsFromTitle = (title) => {
 
   return {
     buttonId: `${titleFormatted}-tab`,
-    contentId: `${titleFormatted}-tabpanel`
+    contentId: `${titleFormatted}-tabpanel`,
   }
 }
 

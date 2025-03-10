@@ -48,12 +48,12 @@
       display: flex;
 
       @starting-style {
-        @include starting-styles
+        @include starting-styles;
       }
     }
 
     &:not([open]) {
-      @include starting-styles
+      @include starting-styles;
     }
   }
 

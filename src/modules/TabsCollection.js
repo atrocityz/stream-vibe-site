@@ -9,16 +9,16 @@ class Tabs extends BaseComponent {
     root: rootSelector,
     navigation: '[data-js-tabs-navigation]',
     button: '[data-js-tabs-button]',
-    content: '[data-js-tabs-content]'
+    content: '[data-js-tabs-content]',
   }
 
   stateClasses = {
-    isActive: 'is-active'
+    isActive: 'is-active',
   }
 
   stateCSSVariables = {
     activeButtonWidth: '--tabsNavigationActiveButtonWidth',
-    activeButtonOffsetLeft: '--tabsNavigationActiveButtonOffsetLeft'
+    activeButtonOffsetLeft: '--tabsNavigationActiveButtonOffsetLeft',
   }
 
   constructor(rootElement) {
@@ -28,10 +28,16 @@ class Tabs extends BaseComponent {
     this.navigationElement = this.params.navigationTargetElementId
       ? document.getElementById(this.params.navigationTargetElementId)
       : this.rootElement.querySelector(this.selectors.navigation)
-    this.buttonElements = [...this.navigationElement.querySelectorAll(this.selectors.button)]
-    this.contentElements = [...this.rootElement.querySelectorAll(this.selectors.content)]
+    this.buttonElements = [
+      ...this.navigationElement.querySelectorAll(this.selectors.button),
+    ]
+    this.contentElements = [
+      ...this.rootElement.querySelectorAll(this.selectors.content),
+    ]
     this.state = this.getProxyState({
-      activeTabIndex: this.buttonElements.findIndex(({ ariaSelected }) => ariaSelected)
+      activeTabIndex: this.buttonElements.findIndex(
+        ({ ariaSelected }) => ariaSelected,
+      ),
     })
     this.limitTabsIndex = this.buttonElements.length - 1
     this.bindEvents()
@@ -39,19 +45,20 @@ class Tabs extends BaseComponent {
   }
 
   updateNavigationCSSVars(
-    activeButtonElement = this.buttonElements[this.state.activeTabIndex]
+    activeButtonElement = this.buttonElements[this.state.activeTabIndex],
   ) {
     const { width, left } = activeButtonElement.getBoundingClientRect()
-    const offsetLeft = left - this.navigationElement.getBoundingClientRect().left
+    const offsetLeft =
+      left - this.navigationElement.getBoundingClientRect().left
 
     this.navigationElement.style.setProperty(
       this.stateCSSVariables.activeButtonWidth,
-      `${pxToRem(width)}rem`
+      `${pxToRem(width)}rem`,
     )
 
     this.navigationElement.style.setProperty(
       this.stateCSSVariables.activeButtonOffsetLeft,
-      `${pxToRem(offsetLeft)}rem`
+      `${pxToRem(offsetLeft)}rem`,
     )
   }
 
@@ -83,22 +90,27 @@ class Tabs extends BaseComponent {
   }
 
   previousTab = () => {
-    const newTabIndex = this.state.activeTabIndex === 0
-      ? this.limitTabsIndex
-      : this.state.activeTabIndex - 1
+    const newTabIndex =
+      this.state.activeTabIndex === 0
+        ? this.limitTabsIndex
+        : this.state.activeTabIndex - 1
 
     this.activateTab(newTabIndex)
   }
+
   nextTab = () => {
-    const newTabIndex = this.state.activeTabIndex === this.limitTabsIndex
-      ? 0
-      : this.state.activeTabIndex + 1
+    const newTabIndex =
+      this.state.activeTabIndex === this.limitTabsIndex
+        ? 0
+        : this.state.activeTabIndex + 1
 
     this.activateTab(newTabIndex)
   }
+
   firstTab = () => {
     this.activateTab(0)
   }
+
   lastTab = () => {
     this.activateTab(this.limitTabsIndex)
   }
@@ -124,7 +136,7 @@ class Tabs extends BaseComponent {
       ArrowLeft: this.previousTab,
       ArrowRight: this.nextTab,
       Home: this.firstTab,
-      End: this.lastTab
+      End: this.lastTab,
     }[code]
 
     const isMacHomeKey = metaKey && code === 'ArrowLeft'

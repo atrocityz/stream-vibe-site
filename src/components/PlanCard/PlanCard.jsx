@@ -23,11 +23,7 @@ const PlanCard = (props) => {
           href="/subscriptions"
           mode="black-08"
         />
-        <Button
-          label="Choose Plan"
-          isLabelVisible
-          href="/subscriptions"
-        />
+        <Button label="Choose Plan" isLabelVisible href="/subscriptions" />
       </div>
     </div>
   )

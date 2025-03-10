@@ -1,5 +1,4 @@
 import Section from '@/layouts/Section'
-import './Questions.scss'
 import Button from '@/components/Button'
 import AccordionGroup from '@/components/AccordionGroup'
 import Accordion from '@/components/Accordion'
@@ -13,7 +12,7 @@ const Questions = () => {
     'How do I sign up for StreamVibe?',
     'What is the StreamVibe free trial?',
     'How do I contact StreamVibe customer support?',
-    'What are the StreamVibe payment methods?'
+    'What are the StreamVibe payment methods?',
   ]
 
   return (
@@ -21,13 +20,7 @@ const Questions = () => {
       title="Frequently Asked Questions"
       titleId="questions-title"
       description="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
-      actions={
-        <Button
-          label="Ask a Question"
-          isLabelVisible
-          href="/support"
-        />
-      }
+      actions={<Button label="Ask a Question" isLabelVisible href="/support" />}
     >
       <AccordionGroup columns={2}>
         {questionItems.map((question, index) => (
@@ -38,7 +31,10 @@ const Questions = () => {
             isOpen={index === 0}
             key={index}
           >
-            <p>StreamVibe is a streaming service that allows you to watch movies and shows on demand.</p>
+            <p>
+              StreamVibe is a streaming service that allows you to watch movies
+              and shows on demand.
+            </p>
           </Accordion>
         ))}
       </AccordionGroup>

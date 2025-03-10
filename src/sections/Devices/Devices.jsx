@@ -50,10 +50,7 @@ const Devices = () => {
     >
       <Grid columns={3}>
         {deviceItems.map((deviceItem, index) => (
-          <DeviceCard
-            {...deviceItem}
-            key={index}
-          />
+          <DeviceCard {...deviceItem} key={index} />
         ))}
       </Grid>
     </Section>

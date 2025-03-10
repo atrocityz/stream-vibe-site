@@ -10,13 +10,13 @@ const SliderNavigation = (props) => {
     /*
      * '' (default) || 'tile'
      */
-    mode = ''
+    mode = '',
   } = props
 
   return (
     <div
       className={classNames(className, 'slider-navigation', {
-        [`slider-navigation--${mode}`]: mode
+        [`slider-navigation--${mode}`]: mode,
       })}
       id={id}
       data-js-slider-navigation=""
@@ -27,7 +27,7 @@ const SliderNavigation = (props) => {
         iconName="arrow-left"
         label="Previous slide"
         extraAttrs={{
-          'data-js-slider-previous-button': ''
+          'data-js-slider-previous-button': '',
         }}
       />
       {hasPagination && (
@@ -42,7 +42,7 @@ const SliderNavigation = (props) => {
         iconName="arrow-right"
         label="Next slide"
         extraAttrs={{
-          'data-js-slider-next-button': ''
+          'data-js-slider-next-button': '',
         }}
       />
     </div>

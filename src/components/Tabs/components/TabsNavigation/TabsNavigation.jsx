@@ -4,12 +4,7 @@ import classNames from 'classnames'
 import getTabsElementsIdsFromTitle from '@/components/Tabs/utils/getTabsElementsIdsFromTitle'
 
 const TabsNavigation = (props) => {
-  const {
-    className,
-    id,
-    title,
-    items = []
-  } = props
+  const { className, id, title, items = [] } = props
 
   const titleFormatted = getIdFromTitle(title)
   const titleId = `${titleFormatted}-title`
@@ -22,14 +17,16 @@ const TabsNavigation = (props) => {
       aria-labelledby={titleId}
       data-js-tabs-navigation=""
     >
-      <h3 className="visually-hidden" id={titleId}>{title}</h3>
+      <h3 className="visually-hidden" id={titleId}>
+        {title}
+      </h3>
       {items.map(({ isActive, title }, index) => {
         const { buttonId, contentId } = getTabsElementsIdsFromTitle(title)
 
         return (
           <div
             className={classNames('tabs-navigation__button', {
-              'is-active': isActive
+              'is-active': isActive,
             })}
             id={buttonId}
             aria-controls={contentId}

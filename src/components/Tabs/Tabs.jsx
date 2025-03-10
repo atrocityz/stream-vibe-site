@@ -8,7 +8,7 @@ const Tabs = (props) => {
     className,
     title,
     items = [],
-    navigationTargetElementId = null
+    navigationTargetElementId = null,
   } = props
 
   return (
@@ -28,7 +28,7 @@ const Tabs = (props) => {
           return (
             <div
               className={classNames('tabs__content', {
-                'is-active': isActive
+                'is-active': isActive,
               })}
               id={contentId}
               aria-labelledby={buttonId}

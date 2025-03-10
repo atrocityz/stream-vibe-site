@@ -5,34 +5,31 @@ import Button from '@/components/Button'
 import BurgerButton from '@/components/BurgerButton'
 
 const Header = (props) => {
-  const {
-    url,
-    isFixed
-  } = props
+  const { url, isFixed } = props
 
   const menuItems = [
     {
       label: 'Home',
-      href: '/'
+      href: '/',
     },
     {
       label: 'Movies & Shows',
-      href: '/movies'
+      href: '/movies',
     },
     {
       label: 'Support',
-      href: '/support'
+      href: '/support',
     },
     {
       label: 'Subscriptions',
-      href: '/subscriptions'
-    }
+      href: '/subscriptions',
+    },
   ]
 
   return (
     <header
       className={classNames('header', {
-        'is-fixed': isFixed
+        'is-fixed': isFixed,
       })}
       data-js-overlay-menu=""
     >
@@ -46,9 +43,14 @@ const Header = (props) => {
             <ul className="header__menu-list">
               {menuItems.map(({ label, href }, index) => (
                 <li className="header__menu-item" key={index}>
-                  <a className={classNames('header__menu-link', {
-                    'is-active': href === url
-                  })} href={href}>{label}</a>
+                  <a
+                    className={classNames('header__menu-link', {
+                      'is-active': href === url,
+                    })}
+                    href={href}
+                  >
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -71,7 +73,7 @@ const Header = (props) => {
         <BurgerButton
           className="header__burger-button visible-tablet"
           extraAttrs={{
-            'data-js-overlay-menu-burger-button': ''
+            'data-js-overlay-menu-burger-button': '',
           }}
         />
       </div>

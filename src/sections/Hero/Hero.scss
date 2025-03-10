@@ -1,8 +1,8 @@
 .hero {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   padding-bottom: var(--section-padding-y);
+  min-height: 100vh;
   text-align: center;
 
   @include mobile {
@@ -17,21 +17,24 @@
         to bottom,
         var(--heroGradientColorStart) 0%,
         var(--heroGradientColorEnd) 100%
-    ) 50% 0 / 100% var(--heroGradientHeight);
+      )
+      50% 0 / 100% var(--heroGradientHeight);
     --heroGradientBottom: linear-gradient(
         to top,
         var(--heroGradientColorStart) 0%,
         var(--heroGradientColorEnd) 100%
-    ) 50% 101% / 100% var(--heroGradientHeight);
+      )
+      50% 101% / 100% var(--heroGradientHeight);
 
     @include flex-center;
 
     flex-grow: 1;
     padding-top: fluid(195, 150);
     padding-bottom: fluid(131, 50);
-    background: var(--heroGradientTop),
-    var(--heroGradientBottom),
-    url('../../assets/images/Hero/bg.png') 50%/cover;
+    background:
+      var(--heroGradientTop),
+      var(--heroGradientBottom),
+      url('../../assets/images/Hero/bg.png') 50% / cover;
     background-repeat: no-repeat;
   }
 

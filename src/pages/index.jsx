@@ -6,10 +6,10 @@ import Plans from '@/sections/Plans'
 
 export const metadata = {
   title: 'Home',
-  isHeaderFixed: true
+  isHeaderFixed: true,
 }
 
-export default function() {
+export default function () {
   return (
     <>
       <Hero />

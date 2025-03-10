@@ -47,7 +47,7 @@
     }
 
     &-links {
-      --itemColumnGap: #{fluid-to-laptop(40,32)};
+      --itemColumnGap: #{fluid-to-laptop(40, 32)};
 
       display: flex;
       column-gap: var(--itemColumnGap);

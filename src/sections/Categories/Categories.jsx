@@ -1,4 +1,3 @@
-import './Categories.scss'
 import Section from '@/layouts/Section'
 import CategoryCard from '@/components/CategoryCard'
 import Slider from '@/components/Slider'
@@ -13,12 +12,7 @@ const Categories = () => {
       title="Explore our wide variety of categories"
       description="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
       titleId="categories-title"
-      actions={(
-        <SliderNavigation
-          mode="tile"
-          id={sliderNavigationId}
-        />
-      )}
+      actions={<SliderNavigation mode="tile" id={sliderNavigationId} />}
       isActionsHiddenOnMobile
     >
       <Slider
@@ -26,10 +20,7 @@ const Categories = () => {
         isBeyondTheViewportOnMobileS
       >
         {categoryItems.map((categoryItem, index) => (
-          <CategoryCard
-            {...categoryItem}
-            key={index}
-          />
+          <CategoryCard {...categoryItem} key={index} />
         ))}
       </Slider>
     </Section>

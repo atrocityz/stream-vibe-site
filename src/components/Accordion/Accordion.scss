@@ -41,10 +41,11 @@
     color: inherit;
     transition-duration: var(--transition-duration);
 
-    &::before, &::after {
+    &::before,
+    &::after {
       @include abs-y;
 
-      content: "";
+      content: '';
       right: 0;
       border-radius: 10px;
       width: fluid-to-laptop(20, 16);

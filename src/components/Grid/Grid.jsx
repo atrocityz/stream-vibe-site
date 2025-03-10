@@ -11,10 +11,7 @@ const Grid = (props) => {
       })}
     >
       {children.map((child, index) => (
-        <li
-          className="grid__item"
-          key={index}
-        >
+        <li className="grid__item" key={index}>
           {child}
         </li>
       ))}

@@ -19,10 +19,7 @@ const Section = (props) => {
     >
       <header className="section__header">
         <div className="section__info">
-          <h2
-            className="section__title title title--h3"
-            id={titleId}
-          >
+          <h2 className="section__title title title--h3" id={titleId}>
             {title}
           </h2>
           {description && (

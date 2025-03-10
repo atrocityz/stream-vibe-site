@@ -1,7 +1,7 @@
 import 'swiper/css'
 import './Slider.scss'
-import classNames from 'classnames'
 import SliderNavigation from './components/SliderNavigation'
+import classNames from 'classnames'
 
 const defaultSliderParams = {
   slidesPerView: 5,
@@ -11,55 +11,51 @@ const defaultSliderParams = {
     0: {
       slidesPerView: 2,
       slidesPerGroup: 1,
-      spaceBetween: 20
+      spaceBetween: 20,
     },
     481: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 20
+      spaceBetween: 20,
     },
     768: {
       slidesPerView: 4,
       slidesPerGroup: 4,
-      spaceBetween: 20
+      spaceBetween: 20,
     },
     1024: {
       spaceBetween: 20,
-      allowTouchMove: false
+      allowTouchMove: false,
     },
     1441: {
       slidesPerView: 5,
       slidesPerGroup: 5,
       spaceBetween: 30,
-      allowTouchMove: false
-    }
-  }
+      allowTouchMove: false,
+    },
+  },
 }
 
 const Slider = (props) => {
   const {
-    className,
     children,
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
     isBeyondTheViewportOnMobileS,
-    hasScrollbar = true
+    hasScrollbar = true,
   } = props
 
   return (
     <div
       className={classNames('slider', {
-        'slider--beyond-the-viewport-on-mobile-s': isBeyondTheViewportOnMobileS
+        'slider--beyond-the-viewport-on-mobile-s': isBeyondTheViewportOnMobileS,
       })}
       data-js-slider={JSON.stringify({
         sliderParams,
-        navigationTargetElementId
+        navigationTargetElementId,
       })}
     >
-      <div
-        className="slider__swiper swiper"
-        data-js-slider-swiper=""
-      >
+      <div className="slider__swiper swiper" data-js-slider-swiper="">
         <ul className="slider__list swiper-wrapper">
           {children.map((slide, index) => (
             <li className="slider__item swiper-slide" key={index}>
@@ -70,9 +66,7 @@ const Slider = (props) => {
       </div>
 
       {!navigationTargetElementId && (
-        <SliderNavigation
-          className="slider__navigation"
-        />
+        <SliderNavigation className="slider__navigation" />
       )}
 
       {hasScrollbar && (
