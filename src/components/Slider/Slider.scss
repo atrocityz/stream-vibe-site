@@ -7,6 +7,20 @@
     }
   }
 
+  &__item {
+    width: auto;
+  }
+
+  &__navigation {
+    margin-top: fluid(40, 24);
+
+    &--centered {
+      &.slider-navigation {
+        justify-content: center;
+      }
+    }
+  }
+
   &__scrollbar {
     @include abs-x;
 

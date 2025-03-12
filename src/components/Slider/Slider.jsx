@@ -48,6 +48,8 @@ const Slider = (props) => {
      */
     navigationPosition = '',
     isNavigationHiddenMobile = true,
+    navigationMode,
+    isNavigationCentered = false,
   } = props
 
   return (
@@ -72,7 +74,10 @@ const Slider = (props) => {
 
       {!navigationTargetElementId && (
         <SliderNavigation
-          className="slider__navigation"
+          className={classNames('slider__navigation', {
+            'slider__navigation--centered': isNavigationCentered,
+          })}
+          mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}
         />
