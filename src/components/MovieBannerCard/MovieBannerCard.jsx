@@ -1,16 +1,37 @@
 import './MovieBannerCard.scss'
-import { Image } from 'minista'
 import Button from '@/components/Button'
+import { Picture } from 'minista'
+import classNames from 'classnames'
 
 const MovieBannerCard = (props) => {
-  const { title, description, imgSrc } = props
+  const {
+    title,
+    titleId,
+    TitleTag = 'h2',
+    description,
+    imgSrc,
+    isSmallPaddingY = false,
+  } = props
 
   return (
     <div className="movie-banner-card">
-      <Image src={imgSrc} className="movie-banner-card__image" />
-      <div className="movie-banner-card__inner">
+      <Picture
+        src={imgSrc}
+        className="movie-banner-card__image"
+        formats={['webp', 'inherit']}
+      />
+      <div
+        className={classNames('movie-banner-card__inner', {
+          'movie-banner-card__inner--small-padding-y': isSmallPaddingY,
+        })}
+      >
         <div className="movie-banner-card__body">
-          <h2 className="movie-banner-card__title title title--h3">{title}</h2>
+          <TitleTag
+            className="movie-banner-card__title title title--h3"
+            id={titleId}
+          >
+            {title}
+          </TitleTag>
           <div className="movie-banner-card__description hidden-mobile">
             <p>{description}</p>
           </div>
