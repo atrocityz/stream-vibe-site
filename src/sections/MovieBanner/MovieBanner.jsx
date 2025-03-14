@@ -10,7 +10,7 @@ const MovieBanner = () => {
         TitleTag="h1"
         titleId={titleId}
         description="A fiery young man clashes with an unflinching forest officer in a south Indian village where spirituality, fate and folklore rule the lands."
-        imgSrc="/src/assets/images/movies-banner/movies-banner-2.jpg"
+        imgSrc="/src/assets/images/movie-banner/movie-banner-2.jpg"
         isSmallPaddingY
       />
     </section>
