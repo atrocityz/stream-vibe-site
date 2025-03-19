@@ -7,6 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 export default [
   { files: ['**/*.{js,mjs,cjs,jsx}'] },
   { languageOptions: { globals: globals.browser } },
+  { ignores: ['**/*.config.js'] },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
   eslintPluginPrettierRecommended,
