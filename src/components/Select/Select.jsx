@@ -14,7 +14,7 @@ const Select = (props) => {
      * }>
      */
     options = [],
-    buttonClassName,
+    fieldControlClassName,
   } = props
 
   const IDs = {
@@ -38,7 +38,10 @@ const Select = (props) => {
         {label}
       </label>
       <select
-        className={classNames('select__original-control', buttonClassName)}
+        className={classNames(
+          'select__original-control',
+          fieldControlClassName,
+        )}
         id={IDs.originalControl}
         defaultValue={selectedOption.value}
         tabIndex={-1}
@@ -52,7 +55,7 @@ const Select = (props) => {
       </select>
       <div className="select__body">
         <div
-          className={classNames('select__button', buttonClassName)}
+          className={classNames('select__button', fieldControlClassName)}
           tabIndex={0}
           role="combobox"
           aria-expanded={false}

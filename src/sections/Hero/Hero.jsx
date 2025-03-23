@@ -1,5 +1,6 @@
 import './Hero.scss'
 import Button from '@/components/Button'
+import playImgSrc from '@/assets/images/play.svg'
 
 const Hero = () => {
   const playButtonTitle = 'Play video'
@@ -19,7 +20,7 @@ const Hero = () => {
               className="hero__play-button-image"
               width={470}
               height={470}
-              src="/play.svg"
+              src={playImgSrc}
               alt=""
             />
           </button>

@@ -16,7 +16,7 @@ export default defineConfig({
       optimize: {
         layout: 'constrained',
         breakpoints: [
-          320, 400, 640, 800, 1024, 1280, 1440, 1920, 2560, 2880, 3840
+          320, 400, 640, 800, 1024, 1280, 1440, 1920, 2560, 2880, 3840,
         ],
         resolution: [1, 2],
         format: 'inherit',
@@ -25,26 +25,26 @@ export default defineConfig({
         aspect: undefined,
         background: undefined,
         fit: 'cover',
-        position: 'centre'
-      }
+        position: 'centre',
+      },
     },
     svgr: {
-      svgrOptions: {}
+      svgrOptions: {},
     },
     icons: {
       srcDir: 'src/assets/icons',
       outDir: 'assets/images',
       outName: '[dirname]',
       svgstoreOptions: {
-        cleanSymbols: ['fill', 'stroke']
-      }
+        cleanSymbols: ['fill', 'stroke'],
+      },
     },
     fonts: {
       outDir: 'assets/fonts',
-      outName: '[name]'
+      outName: '[name]',
     },
     bundle: {
-      outName: 'bundle'
+      outName: 'bundle',
     },
     partial: {
       usePreact: false,
@@ -57,15 +57,17 @@ export default defineConfig({
       intersectionObserverOptions: {
         root: null,
         rootMargin: '0px',
-        thresholds: [0]
-      }
-    }
+        thresholds: [0],
+      },
+    },
   },
   resolve: {
-    alias: [{
-      find: '@/',
-      replacement: path.resolve('src') + '/'
-    }]
+    alias: [
+      {
+        find: '@/',
+        replacement: path.resolve('src') + '/',
+      },
+    ],
   },
   css: {
     devSourcemap: true,
@@ -74,18 +76,18 @@ export default defineConfig({
       globalModulePaths: [],
       generateScopedName: undefined,
       hashPrefix: '',
-      localsConvention: 'camelCaseOnly'
+      localsConvention: 'camelCaseOnly',
     },
     preprocessorOptions: {
       scss: {
         additionalData: `
           @use '@/styles/helpers' as *;
         `,
-        silenceDeprecations: ['legacy-js-api']
+        silenceDeprecations: ['legacy-js-api'],
       },
       less: {},
-      stylus: {}
-    }
+      stylus: {},
+    },
   },
   markdown: {
     useRemarkGfm: true,
@@ -94,8 +96,8 @@ export default defineConfig({
     rehypeHighlightOptions: {},
     mdxOptions: {
       remarkPlugins: [],
-      rehypePlugins: []
-    }
+      rehypePlugins: [],
+    },
   },
   search: {
     outDir: 'assets',
@@ -111,15 +113,15 @@ export default defineConfig({
       english: true,
       hiragana: false,
       katakana: true,
-      kanji: true
-    }
+      kanji: true,
+    },
   },
   delivery: {
     include: ['**/*'],
     exclude: ['/404'],
     trimTitle: '',
     sortBy: 'path',
-    archives: []
+    archives: [],
   },
   beautify: {
     useHtml: true,
@@ -129,15 +131,15 @@ export default defineConfig({
       max_preserve_newlines: 0,
       indent_inner_html: true,
       extra_liners: [],
-      inline: ['span', 'strong', 'b', 'small', 'del', 's', 'code', 'br', 'wbr']
+      inline: ['span', 'strong', 'b', 'small', 'del', 's', 'code', 'br', 'wbr'],
     },
     cssOptions: {
       indent_size: 2,
-      space_around_combinator: true
+      space_around_combinator: true,
     },
     jsOptions: {
-      indent_size: 2
-    }
+      indent_size: 2,
+    },
   },
-  vite: {}
+  vite: {},
 })

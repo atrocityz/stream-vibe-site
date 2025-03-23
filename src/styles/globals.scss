@@ -82,10 +82,3 @@ a {
 :has(.swiper) {
   min-width: 0;
 }
-
-/* stylelint-disable */
-.header,
-.content > *:not(:nth-last-child(2)),
-.footer {
-  //display: none !important;
-}
