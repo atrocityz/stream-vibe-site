@@ -16,10 +16,8 @@
     }
 
     &:has(.section__description) {
-      align-items: end;
-
-      @include mobile {
-        align-items: start;
+      @include mobile-above {
+        align-items: end;
       }
     }
   }
