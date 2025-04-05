@@ -73,7 +73,7 @@
       width: fluid-to-laptop(20, 16);
       height: 2.5px;
       background-color: var(--color-white);
-      transition-duration: var(--transition-duration);
+      transition-duration: var(--transition-duration-longer);
 
       @include laptop {
         height: 2px;
