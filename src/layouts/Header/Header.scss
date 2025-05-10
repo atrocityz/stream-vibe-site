@@ -10,6 +10,25 @@
   animation-timeline: scroll();
   padding-block: fluid(22, 14);
 
+  @mixin scrolling-header-styles {
+    border-color: var(--color-black-15);
+    background-color: var(--color-black-08);
+    padding-block: 10px;
+  }
+
+  @keyframes scrolling-header {
+    to {
+      @include scrolling-header-styles;
+    }
+  }
+
+  @supports (not (animation-timeline: scroll())) {
+    @include scrolling-header-styles;
+
+    // stylelint-disable
+    position: sticky !important;
+  }
+
   &.is-fixed {
     position: fixed;
   }
@@ -133,13 +152,5 @@
 
   &__burger-button {
     position: relative;
-  }
-
-  @keyframes scrolling-header {
-    to {
-      border-color: var(--color-black-15);
-      background-color: var(--color-black-08);
-      padding-block: 10px;
-    }
   }
 }
